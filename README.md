@@ -167,7 +167,10 @@ bash <(curl -k -H "Cache-Control: no-cache" https://raw.githubusercontent.com/ra
 bash <(curl -k -H "Cache-Control: no-cache" https://raw.githubusercontent.com/raymonditweb/okvip-vpsscript/main/script/web/sync_backup_to_ggdrive.sh ) DOMAIN GDRIVE_PATH
 ```
 
-`ví dụ: bash <(curl -k -H "Cache-Control: no-cache" https://raw.githubusercontent.com/raymonditweb/okvip-vpsscript/main/script/web/sync_backup_to_ggdrive.sh ) example.com gdrive:/Backups`
+`ví dụ: bash <(curl -k -H "Cache-Control: no-cache" https://raw.githubusercontent.com/raymonditweb/okvip-vpsscript/main/script/web/sync_backup_to_ggdrive.sh ) test.com gdrive:/backup`
+
+với 'test.com' la ten domain
+'gdrive:' là bắt buộc. /backup là tên folder sẽ upload backup
 
 + Kết quả trả về:
   + Không có root : Error: Vui lòng chạy script với quyền root.
