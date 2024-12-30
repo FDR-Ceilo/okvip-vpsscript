@@ -28,12 +28,12 @@ FOUND=0
 for DIR in "$NGINX_SITE_DIR" "$NGINX_ENABLED_DIR"; do
   if [ -d "$DIR" ]; then
     while read -r conf_file; do
-      if grep -q "$DOMAIN" "$conf_file"; then
+      if sudo grep -q "$DOMAIN" "$conf_file"; then
         FOUND=1
         echo "Domain '$DOMAIN' tìm thấy trong: $conf_file"
         echo "--------------------------------------"
         # Tìm các redirect (rewrite, return, hoặc mã 301/302)
-        grep -E "^[[:space:]]*(rewrite|return|301|302)" "$conf_file" || echo "Error: Không tìm thấy redirect nào."
+        sudo grep -E "^[[:space:]]*(rewrite|return|301|302)" "$conf_file" || echo "Error: Không tìm thấy redirect nào."
         echo
       fi
     done < <(find "$DIR" -type f -name "*.conf")
